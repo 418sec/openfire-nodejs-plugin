@@ -3,6 +3,7 @@
 <%@ page import="org.ifsoft.nodejs.openfire.*" %>
 <%@ page import="org.jivesoftware.openfire.*" %>
 <%@ page import="org.jivesoftware.util.*" %>
+<%@ page import="org.apache.commons.text.StringEscapeUtils"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%
@@ -50,7 +51,7 @@
             <fmt:message key="config.page.configuration.path"/>
         </td>
         <td><input type="text" size="50" maxlength="100" name="path"
-               value="<%= JiveGlobals.getProperty("org.ifsoft.nodejs.openfire.path", plugin.getPath()) %>">
+               value="<%= StringEscapeUtils.escapeHtml4(JiveGlobals.getProperty("org.ifsoft.nodejs.openfire.path", plugin.getPath())) %>">
         </td>
         </tr>            
             </tbody>
